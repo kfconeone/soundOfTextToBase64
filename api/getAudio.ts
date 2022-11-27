@@ -12,8 +12,13 @@ async function fetchAudio(url: string) {
 }
 
 export default async (request: VercelRequest, response: VercelResponse) => {
-    const { url } = request.query;
+    let result;
+    try {
+        const { url } = request.query;
+        result = await fetchAudio(url as string);
+    } catch (err) {
+        console.log(err);
+    }
 
-    let result = await fetchAudio(url as string);
     response.status(200).send(result);
 };
