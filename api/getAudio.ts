@@ -4,12 +4,11 @@ import ab2str from "arraybuffer-to-string";
 import str2ab from "string-to-arraybuffer";
 
 async function fetchAudio(url: string) {
-    // var result = await fetch("https://files.soundoftext.com/b7155c50-6dfc-11ed-a44a-8501b7b1aefa.mp3");
-    // let decoder = new TextDecoder();
-    // let data = await result.arrayBuffer();
+    var result = await fetch("https://files.soundoftext.com/b7155c50-6dfc-11ed-a44a-8501b7b1aefa.mp3");
+    let decoder = new TextDecoder();
+    let data = await result.arrayBuffer();
 
-    // return ab2str(data, "base64");
-    return "asdasd";
+    return ab2str(data, "base64");
 }
 
 export default async (request: VercelRequest, response: VercelResponse) => {
