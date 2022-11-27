@@ -17,5 +17,5 @@ export default async (request: VercelRequest, response: VercelResponse) => {
         console.log(err);
     }
 
-    response.status(200).send(result);
+    response.status(200).send({ result });
 };
